@@ -1,0 +1,80 @@
+<title>Documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+  :root{--ground:#F6F7F9;--surface:#FFF;--sunk:#EDF0F3;--line:#D6DDE4;--line-soft:#E6EBEF;
+        --ink:#141A21;--ink-2:#41505F;--ink-3:#6C7B8A;--accent:#1B4D7A}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --ground:#0E141A;--surface:#151D25;--sunk:#1C252E;--line:#2D3A46;--line-soft:#232E38;
+    --ink:#E9EFF4;--ink-2:#B4C1CD;--ink-3:#8495A4;--accent:#82B4DD}}
+  :root[data-theme="dark"]{--ground:#0E141A;--surface:#151D25;--sunk:#1C252E;--line:#2D3A46;
+    --line-soft:#232E38;--ink:#E9EFF4;--ink-2:#B4C1CD;--ink-3:#8495A4;--accent:#82B4DD}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);
+       font:400 16px/1.65 "IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 88px}
+  header{border-bottom:1px solid var(--line);background:var(--surface);padding:44px 0 30px;margin-bottom:40px}
+  .eyebrow{font:400 11px/1 "IBM Plex Mono",monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+  h1{font:600 clamp(30px,5vw,42px)/1.1 "Newsreader",Georgia,serif;margin:14px 0 0;letter-spacing:-.015em;text-wrap:balance}
+  .sub{color:var(--ink-2);margin:12px 0 0;font-size:17px;max-width:62ch;text-wrap:pretty}
+  nav{margin-top:20px;display:flex;gap:20px;flex-wrap:wrap;font:500 13.5px/1 "IBM Plex Sans",sans-serif}
+  nav a[aria-current]{color:var(--ink);text-decoration:none;font-weight:600}
+  h2{font:600 clamp(21px,3vw,26px)/1.2 "Newsreader",Georgia,serif;margin:42px 0 12px;letter-spacing:-.01em}
+  h3{font:600 16px/1.4 "IBM Plex Sans",sans-serif;margin:26px 0 8px}
+  p{margin:0 0 14px;text-wrap:pretty}
+  ul{margin:0 0 14px;padding-left:22px} li{margin:0 0 7px}
+  a{color:var(--accent);text-underline-offset:2px}
+  strong{font-weight:600}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.87em;background:var(--sunk);padding:1px 5px;border-radius:3px}
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin:16px 0}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:440px}
+  th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line-soft);vertical-align:top}
+  th{font:500 10.5px/1 "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;
+     color:var(--ink-3);background:var(--sunk);white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  blockquote{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+             border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0}
+  blockquote p:last-child{margin-bottom:0}
+  footer{margin-top:52px;border-top:1px solid var(--line);padding-top:20px;font-size:14px;color:var(--ink-3)}
+</style>
+<header><div class="wrap"><div class="eyebrow">Auditable for Confluence &middot; Rethought Systems</div><h1>Documentation</h1><p class="sub">Auditable answers the three questions an auditor asks about every controlled document: who approved it, when it was last reviewed, and whether it is still the version that was approved.</p><nav><a href="./" aria-current='page'>Documentation</a><a href="./privacy.html">Privacy</a><a href="./support.html">Support</a></nav></div></header>
+<div class="wrap">
+<p>Document control and audit evidence for Confluence Cloud.</p>
+<h2>What it does</h2>
+<p>Auditable answers the three questions an auditor asks about every controlled document:</p>
+<p>1. <strong>Who approved this?</strong> 2. <strong>When was it last reviewed?</strong> 3. <strong>Is this still the version that was approved?</strong></p>
+<p>Confluence can answer none of them on its own — its audit log does not record content edits.</p>
+<h2>Getting started</h2>
+<h3>1. Create a control set</h3>
+<p>Open <strong>Auditable</strong> from the Confluence sidebar → <strong>Control sets</strong> → fill in:</p>
+<div class="scroll"><table><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody><tr><td>Name</td><td>e.g. "ISMS Policies"</td></tr><tr><td>Space</td><td>The Confluence space holding the documents</td></tr><tr><td>Standard</td><td>ISO 27001:2022, NIS2, ISO 9001, ISO 13485, SOC 2, or Custom</td></tr><tr><td>Review interval</td><td>Days between required reviews (365 is typical)</td></tr></tbody></table></div>
+<p>The standard you pick sets a sensible default review cadence. It does not restrict anything.</p>
+<h3>2. Enrol documents</h3>
+<p><strong>Enrol every page in this space</strong> places all current pages under document control at once. Alternatively, open any page and use the <strong>Document control</strong> panel under the title to enrol that page alone.</p>
+<h3>3. Approve</h3>
+<p>On a controlled page, the <strong>Document control</strong> byline panel shows current status. Click <strong>Approve current version</strong>. Auditable records:</p>
+<ul><li>the approver's account and display name</li><li>a UTC timestamp</li><li>the exact Confluence page version number</li><li>a <strong>SHA-256 hash of the page content at that moment</strong></li><li>your optional approval note</li></ul>
+<p>The next review date is set automatically from the control set's interval.</p>
+<h3>4. Export evidence</h3>
+<p><strong>Auditable → Evidence pack</strong> produces, for any date range:</p>
+<ul><li><strong>Document register</strong> — every controlled document, its owner, state, approver, approval date,</li></ul>
+<p>  content hash, and next review date</p>
+<ul><li><strong>Audit trail</strong> — every approval, revocation, change-after-approval and review transition</li></ul>
+<p>Both are CSV, ready to paste into a spreadsheet for your auditor.</p>
+<h2>Understanding the five states</h2>
+<div class="scroll"><table><thead><tr><th>State</th><th>Meaning</th></tr></thead><tbody><tr><td><strong>Approved</strong></td><td>The live page is byte-for-byte the approved version, and review is not yet due</td></tr><tr><td><strong>Review due soon</strong></td><td>Approved and unchanged; review date within 30 days</td></tr><tr><td><strong>Review overdue</strong></td><td>Approved and unchanged; review date has passed</td></tr><tr><td><strong>Changed since approval</strong></td><td><strong>The live page is NOT the approved page.</strong> Someone edited it after sign-off</td></tr><tr><td><strong>Awaiting first approval</strong></td><td>Under control, never approved</td></tr></tbody></table></div>
+<p><strong>"Changed since approval" always outranks "overdue."</strong> A document edited after sign-off is never reported as merely late — it is reported as not being the approved document. That ordering is deliberate.</p>
+<h2>How change detection works</h2>
+<p>At approval, Auditable hashes the page's storage-format body with SHA-256 and stores the digest. Whenever the page is updated, the app re-hashes and compares. A mismatch flips the state and writes an entry to the audit trail recording both the old and new hashes.</p>
+<p>CRLF line endings and trailing whitespace are normalised before hashing, so simply re-saving a page without editing it does not raise a false alarm. Any change to the rendered document does change the hash.</p>
+<h2>Approver permissions</h2>
+<p>A control set with <strong>no named approvers</strong> allows anyone who can view the page to approve — the sensible default for a small team.</p>
+<p>Once approvers are named, only they (and the control set owner) may approve. <strong>This is enforced on the server, not in the interface</strong> — a user cannot bypass it by editing the page or calling the API directly.</p>
+<h2>Data and privacy</h2>
+<p>Auditable runs entirely on Atlassian Forge. Your content never leaves your Atlassian cloud tenancy, and the app requests read-only Confluence permissions — it never creates, edits or deletes a page. See the privacy policy for detail.</p>
+<h2>Limits</h2>
+<ul><li>Confluence Cloud only. No Data Center or Server version.</li><li>Pages and blog posts. Live docs are not currently supported.</li><li>Enrolling a space processes up to 2,000 pages per run.</li><li>Uninstalling deletes all app data. Export an evidence pack first if you need the record.</li></ul>
+<h2>Support</h2>
+<p>See the support page, or email tanzilbaghoor@gmail.com.</p>
+<footer>Rethought Systems &middot; Auditable for Confluence Cloud &middot; <a href="mailto:tanzilbaghoor@gmail.com">tanzilbaghoor@gmail.com</a></footer>
+</div>

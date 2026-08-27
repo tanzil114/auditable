@@ -1,0 +1,67 @@
+<title>Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+  :root{--ground:#F6F7F9;--surface:#FFF;--sunk:#EDF0F3;--line:#D6DDE4;--line-soft:#E6EBEF;
+        --ink:#141A21;--ink-2:#41505F;--ink-3:#6C7B8A;--accent:#1B4D7A}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --ground:#0E141A;--surface:#151D25;--sunk:#1C252E;--line:#2D3A46;--line-soft:#232E38;
+    --ink:#E9EFF4;--ink-2:#B4C1CD;--ink-3:#8495A4;--accent:#82B4DD}}
+  :root[data-theme="dark"]{--ground:#0E141A;--surface:#151D25;--sunk:#1C252E;--line:#2D3A46;
+    --line-soft:#232E38;--ink:#E9EFF4;--ink-2:#B4C1CD;--ink-3:#8495A4;--accent:#82B4DD}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);
+       font:400 16px/1.65 "IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 88px}
+  header{border-bottom:1px solid var(--line);background:var(--surface);padding:44px 0 30px;margin-bottom:40px}
+  .eyebrow{font:400 11px/1 "IBM Plex Mono",monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+  h1{font:600 clamp(30px,5vw,42px)/1.1 "Newsreader",Georgia,serif;margin:14px 0 0;letter-spacing:-.015em;text-wrap:balance}
+  .sub{color:var(--ink-2);margin:12px 0 0;font-size:17px;max-width:62ch;text-wrap:pretty}
+  nav{margin-top:20px;display:flex;gap:20px;flex-wrap:wrap;font:500 13.5px/1 "IBM Plex Sans",sans-serif}
+  nav a[aria-current]{color:var(--ink);text-decoration:none;font-weight:600}
+  h2{font:600 clamp(21px,3vw,26px)/1.2 "Newsreader",Georgia,serif;margin:42px 0 12px;letter-spacing:-.01em}
+  h3{font:600 16px/1.4 "IBM Plex Sans",sans-serif;margin:26px 0 8px}
+  p{margin:0 0 14px;text-wrap:pretty}
+  ul{margin:0 0 14px;padding-left:22px} li{margin:0 0 7px}
+  a{color:var(--accent);text-underline-offset:2px}
+  strong{font-weight:600}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.87em;background:var(--sunk);padding:1px 5px;border-radius:3px}
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin:16px 0}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:440px}
+  th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line-soft);vertical-align:top}
+  th{font:500 10.5px/1 "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;
+     color:var(--ink-3);background:var(--sunk);white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  blockquote{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+             border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0}
+  blockquote p:last-child{margin-bottom:0}
+  footer{margin-top:52px;border-top:1px solid var(--line);padding-top:20px;font-size:14px;color:var(--ink-3)}
+</style>
+<header><div class="wrap"><div class="eyebrow">Auditable for Confluence &middot; Rethought Systems</div><h1>Privacy Policy</h1><p class="sub">Auditable runs entirely on Atlassian Forge. Your content never leaves your Atlassian cloud, and we operate no servers of our own.</p><nav><a href="./">Documentation</a><a href="./privacy.html" aria-current='page'>Privacy</a><a href="./support.html">Support</a></nav></div></header>
+<div class="wrap">
+<p><strong>Last updated:</strong> 27 August 2026 <strong>Vendor:</strong> Rethought Systems <strong>Contact:</strong> tanzilbaghoor@gmail.com</p>
+<h2>Summary</h2>
+<p>Auditable is built on <strong>Atlassian Forge</strong> and runs entirely inside Atlassian's cloud infrastructure. <strong>We operate no servers of our own, and your content is never transmitted to us or to any third party.</strong> We cannot read your Confluence content.</p>
+<h2>What the app stores</h2>
+<p>Auditable stores the following in Atlassian's Forge storage, inside your own Atlassian cloud tenancy, subject to your site's data residency settings:</p>
+<div class="scroll"><table><thead><tr><th>Data</th><th>Purpose</th></tr></thead><tbody><tr><td>Confluence page IDs, titles and space keys</td><td>Identify which pages are under document control</td></tr><tr><td>Atlassian account IDs of owners and approvers</td><td>Record who owns and who approved a document</td></tr><tr><td>Approval timestamps and page version numbers</td><td>Provide the audit record</td></tr><tr><td>SHA-256 hashes of approved page content</td><td>Detect whether a page changed after approval</td></tr><tr><td>Review dates and review intervals</td><td>Track when a document is next due for review</td></tr><tr><td>Free-text approval notes you enter</td><td>Context on the audit record</td></tr></tbody></table></div>
+<p><strong>We do not store page content.</strong> Only a one-way SHA-256 hash of it, which cannot be reversed to recover the original text.</p>
+<h2>What the app does not do</h2>
+<ul><li>We do not transmit any data outside your Atlassian cloud tenancy.</li><li>We do not use any third-party analytics, tracking or advertising.</li><li>We do not sell, share or disclose any data to third parties.</li><li>We do not use your data to train machine-learning models.</li><li>The app makes no outbound network calls to any host other than the Confluence REST API of</li></ul>
+<p>  your own site.</p>
+<h2>Permissions the app requests</h2>
+<div class="scroll"><table><thead><tr><th>Scope</th><th>Why</th></tr></thead><tbody><tr><td><code>read:page:confluence</code></td><td>Read page content to compute the approval hash</td></tr><tr><td><code>read:space:confluence</code></td><td>List spaces so you can select one for a control set</td></tr><tr><td><code>read:user:confluence</code></td><td>Show approver and owner names instead of raw account IDs</td></tr><tr><td><code>read:confluence-content.summary</code></td><td>Receive page-updated events to detect changes after approval</td></tr><tr><td><code>storage:app</code></td><td>Store the records listed above</td></tr></tbody></table></div>
+<p>All scopes are read-only with respect to your Confluence content. <strong>The app never modifies, creates or deletes any page.</strong></p>
+<h2>Data retention and deletion</h2>
+<p>Records persist while the app is installed. <strong>When you uninstall Auditable, Atlassian deletes all app storage associated with your site</strong>, in line with the Forge platform's data lifecycle.</p>
+<p>Audit events are deliberately append-only while the app is installed — they are not edited or deleted by the app, because their integrity is the product's purpose. Removing a control set un-enrols its documents but retains their history.</p>
+<h2>Your rights</h2>
+<p>Because all data is held within your own Atlassian tenancy, you remain the data controller. You can export every record the app holds at any time using the built-in evidence pack export (CSV and JSON), and you can erase all of it by uninstalling the app.</p>
+<h2>Sub-processors</h2>
+<p>None. Atlassian is the sole infrastructure provider, acting under your existing agreement with them.</p>
+<h2>Changes</h2>
+<p>Material changes will be reflected here with an updated date, and noted in the app's release notes on the Atlassian Marketplace.</p>
+<h2>Contact</h2>
+<p>Questions about this policy: tanzilbaghoor@gmail.com</p>
+<footer>Rethought Systems &middot; Auditable for Confluence Cloud &middot; <a href="mailto:tanzilbaghoor@gmail.com">tanzilbaghoor@gmail.com</a></footer>
+</div>

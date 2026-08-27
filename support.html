@@ -1,0 +1,56 @@
+<title>Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+  :root{--ground:#F6F7F9;--surface:#FFF;--sunk:#EDF0F3;--line:#D6DDE4;--line-soft:#E6EBEF;
+        --ink:#141A21;--ink-2:#41505F;--ink-3:#6C7B8A;--accent:#1B4D7A}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --ground:#0E141A;--surface:#151D25;--sunk:#1C252E;--line:#2D3A46;--line-soft:#232E38;
+    --ink:#E9EFF4;--ink-2:#B4C1CD;--ink-3:#8495A4;--accent:#82B4DD}}
+  :root[data-theme="dark"]{--ground:#0E141A;--surface:#151D25;--sunk:#1C252E;--line:#2D3A46;
+    --line-soft:#232E38;--ink:#E9EFF4;--ink-2:#B4C1CD;--ink-3:#8495A4;--accent:#82B4DD}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);
+       font:400 16px/1.65 "IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 88px}
+  header{border-bottom:1px solid var(--line);background:var(--surface);padding:44px 0 30px;margin-bottom:40px}
+  .eyebrow{font:400 11px/1 "IBM Plex Mono",monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+  h1{font:600 clamp(30px,5vw,42px)/1.1 "Newsreader",Georgia,serif;margin:14px 0 0;letter-spacing:-.015em;text-wrap:balance}
+  .sub{color:var(--ink-2);margin:12px 0 0;font-size:17px;max-width:62ch;text-wrap:pretty}
+  nav{margin-top:20px;display:flex;gap:20px;flex-wrap:wrap;font:500 13.5px/1 "IBM Plex Sans",sans-serif}
+  nav a[aria-current]{color:var(--ink);text-decoration:none;font-weight:600}
+  h2{font:600 clamp(21px,3vw,26px)/1.2 "Newsreader",Georgia,serif;margin:42px 0 12px;letter-spacing:-.01em}
+  h3{font:600 16px/1.4 "IBM Plex Sans",sans-serif;margin:26px 0 8px}
+  p{margin:0 0 14px;text-wrap:pretty}
+  ul{margin:0 0 14px;padding-left:22px} li{margin:0 0 7px}
+  a{color:var(--accent);text-underline-offset:2px}
+  strong{font-weight:600}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.87em;background:var(--sunk);padding:1px 5px;border-radius:3px}
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin:16px 0}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:440px}
+  th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line-soft);vertical-align:top}
+  th{font:500 10.5px/1 "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;
+     color:var(--ink-3);background:var(--sunk);white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  blockquote{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+             border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0}
+  blockquote p:last-child{margin-bottom:0}
+  footer{margin-top:52px;border-top:1px solid var(--line);padding-top:20px;font-size:14px;color:var(--ink-3)}
+</style>
+<header><div class="wrap"><div class="eyebrow">Auditable for Confluence &middot; Rethought Systems</div><h1>Support</h1><p class="sub">Email tanzilbaghoor@gmail.com. We aim to respond within two business days.</p><nav><a href="./">Documentation</a><a href="./privacy.html">Privacy</a><a href="./support.html" aria-current='page'>Support</a></nav></div></header>
+<div class="wrap">
+<p><strong>Vendor:</strong> Rethought Systems <strong>Support email:</strong> tanzilbaghoor@gmail.com <strong>Response target:</strong> within 2 business days</p>
+<h2>Before contacting us</h2>
+<p>Please include:</p>
+<ul><li>Your Confluence site URL (<code>something.atlassian.net</code>)</li><li>The page ID or title of the affected document</li><li>What you expected to happen, and what happened instead</li><li>A screenshot of the byline panel or dashboard where relevant</li></ul>
+<h2>Common questions</h2>
+<p><strong>A page shows "Changed since approval" but I did not change anything.</strong> Any edit that alters the page body changes the content hash — including edits made by automation, macros whose stored markup changes, or a bulk find-and-replace. Open the page history to see the version that triggered it. Re-approving records a fresh hash against the current version.</p>
+<p><strong>Line-ending or whitespace changes do not trigger it.</strong> Auditable normalises CRLF line endings and trailing whitespace before hashing, precisely so that saving a page without editing it does not raise a false alarm.</p>
+<p><strong>A document is overdue but nobody was notified.</strong> Review state is recalculated by a daily sweep and refreshed whenever the page is opened. If a document was enrolled today, its first sweep has not run yet.</p>
+<p><strong>I cannot approve — the button is missing.</strong> You are not a named approver on that control set. Approver rules are enforced on the server, not in the interface, so this cannot be bypassed by editing the page. Ask the control set owner to add you.</p>
+<p><strong>Uninstalling — will I lose my audit history?</strong> Yes. Uninstalling removes all app storage. <strong>Export an evidence pack before uninstalling</strong> if you need to retain the record.</p>
+<p><strong>Does the app change my pages?</strong> No. All Confluence permissions requested are read-only. The app never creates, edits or deletes content.</p>
+<h2>Reporting a security issue</h2>
+<p>Email tanzilbaghoor@gmail.com with "SECURITY" in the subject. Please do not open a public report. We aim to acknowledge within 2 business days.</p>
+<footer>Rethought Systems &middot; Auditable for Confluence Cloud &middot; <a href="mailto:tanzilbaghoor@gmail.com">tanzilbaghoor@gmail.com</a></footer>
+</div>
