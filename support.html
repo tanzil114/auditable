@@ -47,12 +47,17 @@
 <p>Please include:</p>
 <ul><li>Your Confluence site URL (<code>something.atlassian.net</code>)</li><li>The page ID or title of the affected document</li><li>What you expected to happen, and what happened instead</li><li>A screenshot of the byline panel or dashboard where relevant</li></ul>
 <h2>Common questions</h2>
-<p><strong>A page shows "Changed since approval" but I did not change anything.</strong> Any edit that alters the page body changes the content hash — including edits made by automation, macros whose stored markup changes, or a bulk find-and-replace. Open the page history to see the version that triggered it. Re-approving records a fresh hash against the current version.</p>
+<h3>A page shows "Changed since approval" but I did not change anything.</h3>
+<p>Any edit that alters the page body changes the content hash — including edits made by automation, macros whose stored markup changes, or a bulk find-and-replace. Open the page history to see the version that triggered it. Re-approving records a fresh hash against the current version.</p>
 <p><strong>Line-ending or whitespace changes do not trigger it.</strong> Auditable normalises CRLF line endings and trailing whitespace before hashing, precisely so that saving a page without editing it does not raise a false alarm.</p>
-<p><strong>A document is overdue but nobody was notified.</strong> Review state is recalculated by a daily sweep and refreshed whenever the page is opened. If a document was enrolled today, its first sweep has not run yet.</p>
-<p><strong>I cannot approve — the button is missing.</strong> You are not a named approver on that control set. Approver rules are enforced on the server, not in the interface, so this cannot be bypassed by editing the page. Ask the control set owner to add you.</p>
-<p><strong>Uninstalling — will I lose my audit history?</strong> Yes. Uninstalling removes all app storage. <strong>Export an evidence pack before uninstalling</strong> if you need to retain the record.</p>
-<p><strong>Does the app change my pages?</strong> No. All Confluence permissions requested are read-only. The app never creates, edits or deletes content.</p>
+<h3>A document is overdue but nobody was notified.</h3>
+<p>Review state is recalculated by a daily sweep and refreshed whenever the page is opened. If a document was enrolled today, its first sweep has not run yet.</p>
+<h3>I cannot approve — the button is missing.</h3>
+<p>You are not a named approver on that control set. Approver rules are enforced on the server, not in the interface, so this cannot be bypassed by editing the page. Ask the control set owner to add you.</p>
+<h3>Uninstalling — will I lose my audit history?</h3>
+<p>Yes. Uninstalling removes all app storage. <strong>Export an evidence pack before uninstalling</strong> if you need to retain the record.</p>
+<h3>Does the app change my pages?</h3>
+<p>No. All Confluence permissions requested are read-only. The app never creates, edits or deletes content.</p>
 <h2>Reporting a security issue</h2>
 <p>Email tanzeel@rethought.to with "SECURITY" in the subject. Please do not open a public report. We aim to acknowledge within 2 business days.</p>
 <footer>Rethought Systems &middot; Auditable for Confluence Cloud &middot; <a href="mailto:tanzeel@rethought.to">tanzeel@rethought.to</a></footer>
