@@ -22,7 +22,8 @@
   h2{font:600 clamp(21px,3vw,26px)/1.2 "Newsreader",Georgia,serif;margin:42px 0 12px;letter-spacing:-.01em}
   h3{font:600 16px/1.4 "IBM Plex Sans",sans-serif;margin:26px 0 8px}
   p{margin:0 0 14px;text-wrap:pretty}
-  ul{margin:0 0 14px;padding-left:22px} li{margin:0 0 7px}
+  ul,ol{margin:0 0 14px;padding-left:22px} li{margin:0 0 7px}
+  ol{counter-reset:none}
   a{color:var(--accent);text-underline-offset:2px}
   strong{font-weight:600}
   code{font-family:"IBM Plex Mono",monospace;font-size:.87em;background:var(--sunk);padding:1px 5px;border-radius:3px}
@@ -39,10 +40,9 @@
 </style>
 <header><div class="wrap"><div class="eyebrow">Auditable for Confluence &middot; Rethought Systems</div><h1>Documentation</h1><p class="sub">Auditable answers the three questions an auditor asks about every controlled document: who approved it, when it was last reviewed, and whether it is still the version that was approved.</p><nav><a href="./" aria-current='page'>Documentation</a><a href="./privacy.html">Privacy</a><a href="./support.html">Support</a></nav></div></header>
 <div class="wrap">
-<p>Document control and audit evidence for Confluence Cloud.</p>
 <h2>What it does</h2>
 <p>Auditable answers the three questions an auditor asks about every controlled document:</p>
-<p>1. <strong>Who approved this?</strong> 2. <strong>When was it last reviewed?</strong> 3. <strong>Is this still the version that was approved?</strong></p>
+<ol><li><strong>Who approved this?</strong></li><li><strong>When was it last reviewed?</strong></li><li><strong>Is this still the version that was approved?</strong></li></ol>
 <p>Confluence can answer none of them on its own — its audit log does not record content edits.</p>
 <h2>Getting started</h2>
 <h3>1. Create a control set</h3>
