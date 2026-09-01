@@ -1,0 +1,86 @@
+<title>Security</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+  :root{--ground:#F6F7F9;--surface:#FFF;--sunk:#EDF0F3;--line:#D6DDE4;--line-soft:#E6EBEF;
+        --ink:#141A21;--ink-2:#41505F;--ink-3:#6C7B8A;--accent:#1B4D7A}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --ground:#0E141A;--surface:#151D25;--sunk:#1C252E;--line:#2D3A46;--line-soft:#232E38;
+    --ink:#E9EFF4;--ink-2:#B4C1CD;--ink-3:#8495A4;--accent:#82B4DD}}
+  :root[data-theme="dark"]{--ground:#0E141A;--surface:#151D25;--sunk:#1C252E;--line:#2D3A46;
+    --line-soft:#232E38;--ink:#E9EFF4;--ink-2:#B4C1CD;--ink-3:#8495A4;--accent:#82B4DD}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--ink);
+       font:400 16px/1.65 "IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 88px}
+  header{border-bottom:1px solid var(--line);background:var(--surface);padding:44px 0 30px;margin-bottom:40px}
+  .eyebrow{font:400 11px/1 "IBM Plex Mono",monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+  h1{font:600 clamp(30px,5vw,42px)/1.1 "Newsreader",Georgia,serif;margin:14px 0 0;letter-spacing:-.015em;text-wrap:balance}
+  .sub{color:var(--ink-2);margin:12px 0 0;font-size:17px;max-width:62ch;text-wrap:pretty}
+  nav{margin-top:20px;display:flex;gap:20px;flex-wrap:wrap;font:500 13.5px/1 "IBM Plex Sans",sans-serif}
+  nav a[aria-current]{color:var(--ink);text-decoration:none;font-weight:600}
+  h2{font:600 clamp(21px,3vw,26px)/1.2 "Newsreader",Georgia,serif;margin:42px 0 12px;letter-spacing:-.01em}
+  h3{font:600 16px/1.4 "IBM Plex Sans",sans-serif;margin:26px 0 8px}
+  p{margin:0 0 14px;text-wrap:pretty}
+  ul,ol{margin:0 0 14px;padding-left:22px} li{margin:0 0 7px}
+  ol{counter-reset:none}
+  a{color:var(--accent);text-underline-offset:2px}
+  strong{font-weight:600}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.87em;background:var(--sunk);padding:1px 5px;border-radius:3px}
+  .scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface);margin:16px 0}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:440px}
+  th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line-soft);vertical-align:top}
+  th{font:500 10.5px/1 "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;
+     color:var(--ink-3);background:var(--sunk);white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  blockquote{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+             border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0}
+  blockquote p:last-child{margin-bottom:0}
+  .meta{color:var(--ink-2);font-size:14.5px;background:var(--surface);border:1px solid var(--line);
+        border-radius:8px;padding:12px 16px}
+  footer{margin-top:52px;border-top:1px solid var(--line);padding-top:20px;font-size:14px;color:var(--ink-3)}
+</style>
+<header><div class="wrap"><div class="eyebrow">Auditable for Confluence &middot; Rethought</div><h1>Security</h1><p class="sub">How Auditable handles data, what it can reach, and how we handle vulnerabilities. It runs entirely inside your Atlassian tenant and sends nothing anywhere.</p><nav><a href="./">Documentation</a><a href="./privacy.html">Privacy</a><a href="./security.html" aria-current='page'>Security</a><a href="./support.html">Support</a></nav></div></header>
+<div class="wrap">
+<p class="meta"><strong>Vendor:</strong> Rethought<br><strong>Security contact:</strong> security@rethought.to (please put SECURITY in the subject)<br><strong>Response target:</strong> acknowledged within 2 business days<br><strong>Last updated:</strong> 2 September 2026</p>
+<p>This page describes how Auditable handles data, what it can and cannot reach, and how we handle vulnerabilities. It states only controls we actually operate; where something is not in place, it says so.</p>
+<h2>Architecture: nothing leaves your tenant</h2>
+<p>Auditable is an <a href="https://developer.atlassian.com/platform/forge/">Atlassian Forge</a> app. It runs entirely inside your own Atlassian cloud instance.</p>
+<ul><li><strong>We operate no servers.</strong> There is no Rethought backend, so there is no Rethought</li></ul>
+<p>  infrastructure for your content to reach, be stored on, or be breached from.</p>
+<ul><li><strong>No data egress.</strong> The app's manifest requests no external network permissions. Every call</li></ul>
+<p>  it makes is to Atlassian's own APIs. This is verifiable: egress in Forge must be declared in   the manifest, and ours declares none.</p>
+<ul><li>The app is eligible for Atlassian's</li></ul>
+<p>  <a href="https://go.atlassian.com/runs-on-atlassian">Runs on Atlassian</a> programme, which recognises   apps that store data solely within Atlassian's cloud and perform no external egress.</p>
+<h2>What the app stores, and where</h2>
+<p>Stored in Forge's storage inside your Atlassian tenant, encrypted at rest by Atlassian:</p>
+<div class="scroll"><table><thead><tr><th>Stored</th><th>Why</th></tr></thead><tbody><tr><td>Confluence page IDs, titles and version numbers</td><td>To identify controlled documents</td></tr><tr><td>SHA-256 hash of approved page content</td><td>To detect edits made after approval</td></tr><tr><td>Atlassian account IDs of owners and approvers</td><td>To record who owns and who approved</td></tr><tr><td>Review dates, intervals and approval notes</td><td>To run review cycles</td></tr></tbody></table></div>
+<p><strong>We do not store names or email addresses.</strong> Only the opaque Atlassian account ID is recorded. Display names are resolved from Confluence at the moment you view a page or export a pack, and are never written to storage.</p>
+<h2>Permissions</h2>
+<p>The app requests <strong>read-only Confluence scopes only</strong>. It cannot create, edit or delete your content — not because it chooses not to, but because it never requests permission to.</p>
+<p><code>read:page:confluence</code> · <code>read:space:confluence</code> · <code>read:user:confluence</code> · <code>read:confluence-content.summary</code> · <code>storage:app</code></p>
+<h3>Your Confluence permissions are enforced</h3>
+<p>Compliance state is calculated across every controlled page so scheduled review checks keep working regardless of who is logged in. What you are *shown* is separate: the dashboard and the evidence export both filter the register down to pages you can already open in Confluence, asking Confluence <strong>as you</strong> rather than as the app. A page in a space you cannot read never appears in your document list and never reaches your evidence pack — not even its title.</p>
+<p>If that permission check cannot be completed, the app shows nothing rather than guessing. Under-showing is a display problem; over-showing would be a disclosure.</p>
+<h2>Credentials</h2>
+<p>Auditable never asks for, collects or stores passwords, Atlassian API tokens, personal access tokens or any third-party credentials. It holds no secrets.</p>
+<h2>Logging</h2>
+<p>Application logs are held by Atlassian within your environment; we operate no logging infrastructure of our own. We do not log credentials, tokens, passwords, or unnecessary personal information, and API response bodies are never written to logs, because they can contain page titles and account identifiers.</p>
+<h2>Development and vulnerability management</h2>
+<ul><li>Changes reach production through pull request, with automated tests and manifest validation</li></ul>
+<p>  before release.</p>
+<ul><li>Security-relevant behaviour is covered by regression tests that fail if the control is</li></ul>
+<p>  removed — including the permission filtering described above.</p>
+<ul><li>Dependencies are checked against known vulnerabilities with <code>npm audit</code> before each release;</li></ul>
+<p>  findings are fixed or recorded with a reason.</p>
+<ul><li>Because Forge apps auto-upgrade, a security fix reaches every installation without any</li></ul>
+<p>  action by you.</p>
+<h2>Reporting a vulnerability</h2>
+<p>Email <strong>security@rethought.to</strong> with SECURITY in the subject. Please do not open a public report. We aim to acknowledge within 2 business days, and we follow Atlassian's <a href="https://developer.atlassian.com/platform/marketplace/security-bugfix-policy/">Marketplace security bug fix policy</a> for remediation deadlines.</p>
+<p>We will notify affected customers and Atlassian of any confirmed security incident or critical vulnerability affecting this app, following Atlassian's partner notification guidelines.</p>
+<h2>What we do not have</h2>
+<p>Stated plainly so nobody relies on a control we do not operate:</p>
+<ul><li>No compliance certifications (ISO 27001, SOC 2, PCI, HIPAA).</li><li>No third-party penetration test or external security audit.</li><li>We do not currently participate in the Marketplace security bug bounty programme.</li></ul>
+<p>Our security position rests on architecture rather than on certification: the app holds no customer data outside your own Atlassian tenant, requests only read permissions, and sends nothing anywhere.</p>
+<footer>Rethought &middot; Auditable for Confluence Cloud &middot; <a href="mailto:tanzeel@rethought.to">tanzeel@rethought.to</a></footer>
+</div>
